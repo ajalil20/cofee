@@ -1,0 +1,8 @@
+  firebase_auth: ^0.18.0+1
+cloud_firestore: ^0.14.0+1
+
+Auth.dart
+AuthResult class changed to User credential
+FirebaseUser  class changed to User
+User.dart
+class name User changed to Users
