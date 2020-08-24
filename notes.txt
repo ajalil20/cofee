@@ -4,5 +4,24 @@ cloud_firestore: ^0.14.0+1
 Auth.dart
 AuthResult class changed to User credential
 FirebaseUser  class changed to User
+onAuthStateChanged changed to authStateChanges
 User.dart
 class name User changed to Users
+
+
+Stackoverflow:
+
+FirebaseUser changed to User
+
+AuthResult changed to UserCredential
+
+GoogleAuthProvider.getCredential() changed to GoogleAuthProvider.credential()
+
+After error :
+ Auth.dart
+Stream<Users> get user {
+    return _auth.authStateChanges()
+         .map((User user) => _userFromFirebaseUser(user));
+        //bekow line code is same as above line code
+        //.map(_userFromFirebaseUser(user));
+  }

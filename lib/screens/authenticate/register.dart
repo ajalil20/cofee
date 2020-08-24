@@ -1,19 +1,17 @@
-import 'package:coffee/services/auth.dart';
-//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:coffee/services/auth.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
   final Function toggleView;
-  SignIn({this.toggleView});
+  Register({this.toggleView});
 
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
   final Authservice _auth = Authservice();
   final _formkey = GlobalKey<FormState>();
-
   //text field state
 
   String email = '';
@@ -27,11 +25,11 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
-        title: Text('Sign in for Coffee'),
+        title: Text('Sign up for Coffee'),
         actions: <Widget>[
           FlatButton.icon(
               icon: Icon(Icons.person),
-              label: Text('Register'),
+              label: Text('Sign In'),
               onPressed: () {
                 widget.toggleView();
               }),
@@ -64,17 +62,16 @@ class _SignInState extends State<SignIn> {
                   RaisedButton(
                       color: Colors.pink[400],
                       child: Text(
-                        'Sign in',
+                        'Register',
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: () async {
                         if (_formkey.currentState.validate()) {
                           dynamic result = await _auth
-                              .signInWithEmailAndPassword(email, password);
-
+                              .registerWithEmailAndPassword(email, password);
                           if (result == null) {
-                            setState(() => error =
-                                'Could not Sign In with those credentials');
+                            setState(
+                                () => error = 'Please enter a valid email');
                           }
                         }
                       }),
@@ -84,24 +81,9 @@ class _SignInState extends State<SignIn> {
                   Text(
                     error,
                     style: TextStyle(color: Colors.red, fontSize: 14.0),
-                  ),
+                  )
                 ],
               ))),
     );
   }
 }
-
-/*
-RaisedButton(
-            child: Text('Sign in anonomously'),
-            onPressed: () async {
-              dynamic result = await _auth.signInAnon();
-              if (result == null) {
-                print('error signing in');
-              } else {
-                print('signed in ');
-                print(result.uid);
-              }
-            }),
-
-*/
