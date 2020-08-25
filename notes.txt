@@ -15,6 +15,9 @@ SpinKitFadingCircle as SpinKitChasingDots
 database.dart
 FirebaseFirestore as Firebase
 .doc as document
+set as setData
+
+
 
 Stackoverflow:
 
