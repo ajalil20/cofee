@@ -8,6 +8,13 @@ onAuthStateChanged changed to authStateChanges
 User.dart
 class name User changed to Users
 
+loading.dart
+SpinKitFadingCircle as SpinKitChasingDots
+
+
+database.dart
+FirebaseFirestore as Firebase
+.doc as document
 
 Stackoverflow:
 
