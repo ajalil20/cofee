@@ -27,6 +27,12 @@ AuthResult changed to UserCredential
 
 GoogleAuthProvider.getCredential() changed to GoogleAuthProvider.credential()
 
+
+
+
+Lec 18 tk done collection nahi arahi debug mai
+pahle wala lecdekhna ha waha bhi nahi ai thi shayd
+
 After error :
  Auth.dart
 Stream<Users> get user {

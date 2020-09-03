@@ -1,7 +1,6 @@
 import 'package:coffee/models/user.dart';
 import 'package:coffee/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class Authservice {
   final FirebaseAuth _auth = FirebaseAuth.instance;
