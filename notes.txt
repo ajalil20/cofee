@@ -19,6 +19,7 @@ set as setData
 
 
 
+
 Stackoverflow:
 
 FirebaseUser changed to User
@@ -30,14 +31,3 @@ GoogleAuthProvider.getCredential() changed to GoogleAuthProvider.credential()
 
 
 
-Lec 18 tk done collection nahi arahi debug mai
-pahle wala lecdekhna ha waha bhi nahi ai thi shayd
-
-After error :
- Auth.dart
-Stream<Users> get user {
-    return _auth.authStateChanges()
-         .map((User user) => _userFromFirebaseUser(user));
-        //bekow line code is same as above line code
-        //.map(_userFromFirebaseUser(user));
-  }
